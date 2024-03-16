@@ -18,10 +18,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker Image
         run: |
-          docker build --tag ghcr.io/$GITHUB_ACTOR/Comamoca:latest \
-          --tag ghcr.io/$GITHUB_ACTOR/Comamoca:$(echo $GITHUB_SHA | head -c7) \
+          docker build --tag ghcr.io/$GITHUB_ACTOR/pi-metrics:latest \
+          --tag ghcr.io/$GITHUB_ACTOR/pi-metrics:$(echo $GITHUB_SHA | head -c7) \
           .
       - name: Push Docker Image
         run: |
-          docker push ghcr.io/$GITHUB_ACTOR/Comamoca:latest
-          docker push ghcr.io/$GITHUB_ACTOR/Comamoca:$(echo $GITHUB_SHA | head -c7)
+          docker push ghcr.io/$GITHUB_ACTOR/pi-metrics:latest
+          docker push ghcr.io/$GITHUB_ACTOR/pi-metrics:$(echo $GITHUB_SHA | head -c7)
