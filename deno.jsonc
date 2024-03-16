@@ -2,6 +2,7 @@
   "imports": {
     "hono": "https://deno.land/x/hono@v4.1.0/mod.ts",
     "hono/helper": "https://deno.land/x/hono@v4.1.0/helper.ts",
-    "hono/middleware": "https://deno.land/x/hono@v4.1.0/middleware.ts"
+    "hono/middleware": "https://deno.land/x/hono@v4.1.0/middleware.ts",
+    "dotenv": "https://deno.land/std@0.220.1/dotenv/mod.ts"
   }
 }
