@@ -31,7 +31,7 @@ deno run --allow-net --allow-read --allow-env ./main.tsx
 
 ### Deploy to server
 
-First, you must write enviroment varianble `HOST_ADDRESS` to `.env`. `HOST_ADDRESS` is host name of your server domain.
+First, you must write enviroment varianble `HOST_ADDRESS` to `.env`. `HOST_ADDRESS` is host name of your server domain.  
 Example: `HOST_ADDRESS=ws://149.comamoca.dev`
 
 
