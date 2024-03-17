@@ -6,16 +6,13 @@ import { Fragment, jsx } from "hono/middleware";
 import { upgradeWebSocket } from "hono/helper";
 import { sleep } from "https://deno.land/x/sleep@v1.3.0/mod.ts";
 import { cpuInfo, memInfo } from "./lib/info.ts";
-import { load } from "dotenv";
+import "dotenv/autoload";
 
 const app = new Hono();
 const clientScript = await Deno.readTextFile("./client.js")
+const host_address = Deno.env.get("HOST_ADDRESS")
 
-const env = await load({
-  envPath: ".env",
-  defaultsPath: "./env.defaults",
-  restrictEnvAccessTo: ["HOST_ADDRESS"],
-});
+console.log(`HOST_ADDRESS: ${host_address}`)
 
 const Layout: FC = (props) => {
   return (
@@ -33,7 +30,7 @@ const Layout: FC = (props) => {
       </body>
       <script
         dangerouslySetInnerHTML={{
-          __html: clientScript.replace("HOST_ADDRESSS", env["HOST_ADDRESS"]),
+          __html: clientScript.replace("HOST_ADDRESSS", host_address),
         }}
       />
     </html>
